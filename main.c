@@ -14,20 +14,21 @@ int main() {
     printf("Would you like the day , month , year or all [0 , 1 , 2 , 3]\n");
     scanf("%d", &choice);
 
-    if (choice == 0) {
-        printf("%i",localTime->tm_mday);
-    }
-    if (choice == 1) {
-        printf("%i",localTime->tm_mon);
-    }
-    if (choice == 2) {
-        printf("%i",localTime->tm_year);
-    }
-    if (choice == 3) {
-        printf("%i,%i,%i",localTime->tm_mday,localTime->tm_mon,localTime->tm_year);
-        //TODO year is 119?
-    }
 
+    switch (choice) {
+        case 0:
+            printf("%i,%i,%i", localTime->tm_mday, localTime->tm_mon, localTime->tm_year + 1900);
+            break;
+        case 1:
+            printf("%i", localTime->tm_mday);
+            break;
+        case 2:
+            printf("%i", localTime->tm_mon);
+            break;
+        case 3:
+            printf("%i", localTime->tm_year + 1900);
+            break;
+    }
 
     return 0;
 }
